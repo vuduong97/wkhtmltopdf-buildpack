@@ -9,8 +9,8 @@ CACHE_DIR=$2
 BIN_PATH="$BUILD_DIR/bin"
 TMP_PATH="$BUILD_DIR/tmp"
 mkdir -p $CACHE_DIR $BIN_PATH $TMP_PATH
-
-WKHTMLTOPDF_URL="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb"
+                 
+WKHTMLTOPDF_URL="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.trusty_amd64.deb"
 WKHTMLTOPDF_PKG="$CACHE_DIR/wkhtmltopdf.deb"
 WKHTMLTOPDF_PATH="$TMP_PATH/wkhtmltopdf"
 WKHTMLTOPDF_BINARIES="$WKHTMLTOPDF_PATH/usr/local/bin"
