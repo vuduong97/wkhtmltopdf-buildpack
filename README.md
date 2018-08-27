@@ -7,7 +7,7 @@ This is a [Heroku buildpack][0] for bundling a compatible [wkhtmltopdf][1] binar
 ## Versions
 
 * Buildpack:   `0.2`
-* wkhtmltopdf: `0.12.2.1`
+* wkhtmltopdf: `0.12.5`
 
 ## Usage
 
