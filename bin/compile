@@ -10,7 +10,16 @@ BIN_PATH="$BUILD_DIR/bin"
 TMP_PATH="$BUILD_DIR/tmp"
 mkdir -p $CACHE_DIR $BIN_PATH $TMP_PATH
                  
-WKHTMLTOPDF_URL="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb"
+
+if [ "$STACK" == "cedar-14" ]; then
+  UBUNTU_VERSION="trusty"
+elif [ "$STACK" == "heroku-16" ]; then
+  UBUNTU_VERSION="xenial"
+else
+  UBUNTU_VERSION="bionic"
+fi
+
+WKHTMLTOPDF_URL="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.${UBUNTU_VERSION}_amd64.deb"
 WKHTMLTOPDF_PKG="$CACHE_DIR/wkhtmltopdf.deb"
 WKHTMLTOPDF_PATH="$TMP_PATH/wkhtmltopdf"
 WKHTMLTOPDF_BINARIES="$WKHTMLTOPDF_PATH/usr/local/bin"
@@ -21,7 +30,7 @@ FONTS_DIR=$(cd "$BIN_DIR/../fonts"; pwd)
 if [ -f $WKHTMLTOPDF_PKG ]; then
   echo "-----> Using wkhtmltopdf Debian package from cache"
 else
-  echo "-----> Downloading wkhtmltopdf Debian package"
+  echo "-----> Downloading wkhtmltopdf Debian package from ${WKHTMLTOPDF_URL}"
   curl -L $WKHTMLTOPDF_URL -o $WKHTMLTOPDF_PKG
 fi
 

@@ -26,19 +26,5 @@ $ heroku plugins:install https://github.com/heroku/heroku-repo.git
 $ heroku repo:purge_cache -a appname
 ```
 
-## Troubleshooting
-
-If you run into issues when trying to deploy with this buildpack, make sure your app is running on Cedar with Ubuntu 14.04 (`cedar-14`). You can check this with:
-
-```bash
-$ heroku stack
-```
-
-If you are on an older stack, you can upgrade to `cedar-14` with:
-
-```bash
-$ heroku stack:set cedar-14
-```
-
 [0]: http://devcenter.heroku.com/articles/buildpacks
 [1]: http://wkhtmltopdf.org/
