@@ -15,8 +15,10 @@ if [ "$STACK" == "cedar-14" ]; then
   UBUNTU_VERSION="trusty"
 elif [ "$STACK" == "heroku-16" ]; then
   UBUNTU_VERSION="xenial"
-else
+elif [ "$STACK" == "heroku-18" ]; then
   UBUNTU_VERSION="bionic"
+else
+  UBUNTU_VERSION="focal"
 fi
 
 WKHTMLTOPDF_URL="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.${UBUNTU_VERSION}_amd64.deb"
