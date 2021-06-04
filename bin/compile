@@ -8,7 +8,8 @@ CACHE_DIR=$2
 
 BIN_PATH="$BUILD_DIR/bin"
 TMP_PATH="$BUILD_DIR/tmp"
-mkdir -p $CACHE_DIR $BIN_PATH $TMP_PATH
+LIB_PATH="$BUILD_DIR/vendor/wkhtmltox/lib"
+mkdir -p $CACHE_DIR $BIN_PATH $TMP_PATH LIB_PATH
                  
 
 if [ "$STACK" == "cedar-14" ]; then
@@ -25,6 +26,7 @@ WKHTMLTOPDF_URL="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.
 WKHTMLTOPDF_PKG="$CACHE_DIR/wkhtmltopdf.deb"
 WKHTMLTOPDF_PATH="$TMP_PATH/wkhtmltopdf"
 WKHTMLTOPDF_BINARIES="$WKHTMLTOPDF_PATH/usr/local/bin"
+WKHTMLTOPDF_LIBS="$WKHTMLTOPDF_PATH/usr/local/lib"
 
 BIN_DIR=$(cd $(dirname $0); pwd)
 FONTS_DIR=$(cd "$BIN_DIR/../fonts"; pwd)
@@ -44,6 +46,9 @@ chmod +x $WKHTMLTOPDF_BINARIES/*
 
 echo "-----> Moving binaries to the right place"
 mv $WKHTMLTOPDF_BINARIES/* $BIN_PATH/
+
+echo "-----> Moving libs to the right place"
+mv $WKHTMLTOPDF_LIBS/* $LIB_PATH/
 
 echo "-----> Removing wkhtmltoimage binary"
 rm -rf "$BIN_PATH/wkhtmltoimage"
