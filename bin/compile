@@ -14,9 +14,9 @@ mkdir -p $CACHE_DIR $BIN_PATH $TMP_PATH $LIB_PATH
 
 if [ "$STACK" == "heroku-18" ]; then
   UBUNTU_VERSION="bionic"
-if [ "$STACK" == "heroku-20" ]; then
+elif [ "$STACK" == "heroku-20" ]; then
   UBUNTU_VERSION="focal"
-else
+elif [ "$STACK" == "heroku-22" ]; then
   UBUNTU_VERSION="jammy"
 fi
 
