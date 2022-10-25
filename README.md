@@ -1,13 +1,13 @@
-# wkhtmltopdf Buildpack
+# wkhtmltopdf buildpack
 
 This is a [Heroku buildpack][0] for bundling a compatible [wkhtmltopdf][1] binary with your environment.
-
 `wkhtmltoimage` binary is not included in this buildpack.
 
-## Versions
+## Supported stacks:
+* heroku-18
+* heroku-20
+* heroku-22
 
-* Buildpack:   `0.2`
-* wkhtmltopdf: `0.12.5`
 
 ## Usage
 
